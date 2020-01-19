@@ -1,6 +1,7 @@
 package surprise;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -13,6 +14,7 @@ public class FortuneCookie implements ISurprise {
 	    list.add(scanner.next());
 	}
 	scanner.close();*/
+	
 	private static final ArrayList<String> idioms = new ArrayList<String>(Arrays.asList("Gigi Becali: „M-am certat si cu Mitica Dragomir, dar fara jigniri. El m-a facut oligofren, eu l-am facut zdreanta, dar nu ne-am insultat”.",
 			"Dumitru Dragomir: „Dom'le, eu muncesc 24 de ore pe zi, iar uneori chiar si noaptea”",
 			"Dumitru Graur: „Alina Astafei a dat nastere unei fiinte umane”",
@@ -30,7 +32,7 @@ public class FortuneCookie implements ISurprise {
 			"Nicolae Mitea: \"Sunt pesimist. Cred ca putem învinge Olanda\"",
 			"Adrian Porumboiu: \"Singura echipa care poate prinde CFR-ul din urma este DNA!\""));
 	private String idiom;
-	private static Random random;
+	private static final Random random = new Random();
 	
 	public String getIdiom() {
 		return this.idiom;
@@ -48,6 +50,6 @@ public class FortuneCookie implements ISurprise {
 	
 	@Override
 	public void enjoy() {
-		System.out.println(getIdiom());
+		System.out.println("FortuneCookie: " + getIdiom());
 	}
 }

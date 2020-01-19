@@ -1,21 +1,17 @@
 package bags;
 
-import java.util.ArrayList;
-
-import surprise.ISurprise;
-
 public class BagFactoryList implements IBagFactory {
-	private ArrayList<ISurprise> surprises;
 	
 	public IBag makeBag(String type) {
 		switch(type) {
 		case "RANDOM":
-			return new RANDOMBag(surprises);
+			return new RANDOMBag();
 		case "LIFO":
-			return new LIFOBag(surprises);
+			return new LIFOBag();
 		case "FIFO":
-			return new FIFOBag(surprises);
+			return new FIFOBag();
 		}
 		return null;
 	}
+	
 }

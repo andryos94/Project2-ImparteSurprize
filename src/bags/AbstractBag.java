@@ -1,12 +1,14 @@
 package bags;
 
 import java.util.ArrayList;
-
-
 import surprise.ISurprise;
 
 public abstract class AbstractBag implements IBag {
 	private ArrayList<ISurprise> surprises;
+	
+	public AbstractBag() {
+		this.surprises = new ArrayList<ISurprise>();
+	}
 	
 	public AbstractBag(ArrayList<ISurprise> surprises) {
 		this.surprises = surprises;
@@ -24,8 +26,10 @@ public abstract class AbstractBag implements IBag {
 		if(bagOfSurprises.isEmpty()) {
 			System.out.println("NO surprise to add!");
 		}
-		for(int i = 0; i < bagOfSurprises.size(); i++) {
+		
+		while(!bagOfSurprises.isEmpty()) {
 			ISurprise s = bagOfSurprises.takeOut();
+			s.enjoy();
 			this.put(s);
 		}
 	}

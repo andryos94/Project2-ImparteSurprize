@@ -1,11 +1,12 @@
 package surprise;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.Random;
 
 public class Candies implements ISurprise {
-	private static Random random;
+	private static final Random random = new Random();
 	private static final ArrayList<String> candyTypes = new ArrayList<String>(Arrays.asList("chocolate", "jelly", "fruits", "vanilla"));
 	private int noOfCandies;
 	private String typeOfCandy;
@@ -35,6 +36,6 @@ public class Candies implements ISurprise {
 	
 	@Override
 	public void enjoy() {
-		System.out.println("There are " + getNoOfCandies() + " " + getTypeOfCandy() + " candies in the package!");
+		System.out.println("Candy: There are " + getNoOfCandies() + " " + getTypeOfCandy() + " candies in the package!");
 	}
 }

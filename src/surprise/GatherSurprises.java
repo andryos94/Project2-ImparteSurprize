@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public final class GatherSurprises {
-	private static Random random;
+	//private static Random random;
+	private static final Random random = new Random();
 	
 	private GatherSurprises() {
 		
@@ -12,8 +13,9 @@ public final class GatherSurprises {
 	
 	public static ArrayList<ISurprise> gather(int n) {
 		ArrayList<ISurprise> surprises = new ArrayList<ISurprise>();
+		int r = 0;
 		for(int i = 0; i < n; i++) {
-			int r = random.nextInt(3);
+			r = random.nextInt(3);
 			switch(r) {
 			case 0:
 				FortuneCookie f = FortuneCookie.generate();

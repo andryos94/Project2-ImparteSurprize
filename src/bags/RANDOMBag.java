@@ -7,7 +7,11 @@ import java.util.Random;
 import surprise.ISurprise;
 
 public class RANDOMBag extends AbstractBag {
-	private Random random;
+	private static final Random random = new Random();
+	
+	public RANDOMBag() {
+		
+	}
 	
 	public RANDOMBag(ArrayList<ISurprise> surprises) {
 		super(surprises);

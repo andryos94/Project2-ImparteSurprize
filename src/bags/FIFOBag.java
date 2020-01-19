@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import surprise.ISurprise;
 
 public class FIFOBag extends AbstractBag {
+	public FIFOBag() {
+		
+	}
+	
 	public FIFOBag(ArrayList<ISurprise> surprises) {
 		super(surprises);
 	}

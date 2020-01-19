@@ -1,6 +1,7 @@
 package surprise;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 
 public class MinionToy implements ISurprise {
@@ -27,7 +28,7 @@ public class MinionToy implements ISurprise {
 	
 	@Override
 	public void enjoy() {
-		System.out.println("The minion toy is " + getName() + "!");
+		System.out.println("MinionToy: The minion toy is " + getName() + "!");
 	}
 
 	

@@ -1,6 +1,6 @@
 package surprise;
-import java.util.concurrent.TimeUnit;
 
+import java.util.concurrent.TimeUnit;
 import bags.BagFactoryList;
 import bags.IBag;
 
@@ -25,21 +25,22 @@ public abstract class AbstractGiveSurprises {
 	public ISurprise give() {
 		return this.bag.takeOut();
 	}
-
+	
 	public void giveAll() {
-		try {
-			for(int i = 0; i < this.bag.size(); i++) {
-				this.give().enjoy();
+		while(!this.bag.isEmpty()) {
+			this.give().enjoy();
+			try {
 				TimeUnit.SECONDS.sleep(this.waitTime); // number of seconds to sleep
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 	}
-	
+
 	public boolean isEmpty() {
 		return this.bag.isEmpty();
 	}
-	
+
 	protected abstract void giveWithPassion();
 }

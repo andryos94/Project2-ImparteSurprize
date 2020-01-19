@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import surprise.ISurprise;
 
 public class LIFOBag extends AbstractBag {
+	public LIFOBag() {
+		
+	}
 	
 	public LIFOBag(ArrayList<ISurprise> surprises) {
 		super(surprises);
